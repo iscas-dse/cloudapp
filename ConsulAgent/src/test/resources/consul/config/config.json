@@ -1,0 +1,11 @@
+ {
+        "bind_addr":"133.133.133.48",  
+        "bootstrap_expect":1,
+        "client_addr":"0.0.0.0",
+        "data_dir":"E:\\consul\\richard\\consul\\data",
+        "datacenter":"eastaws",
+        "log_level":"INFO",
+        "node_name":"consul4",
+        "server":true,
+        "ui_dir":"E:\\consul\\richard\\consul\\ui"
+ }

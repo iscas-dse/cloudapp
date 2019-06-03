@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ts-register-service
+  labels:
+    app: ts-register-service
+spec:
+  ports:
+    - port: 12344
+      name: http
+  selector:
+    app: ts-register-service

@@ -1,0 +1,6 @@
+!!cn.ac.iscas.cloudeploy.v2.workflowEngine.entity.Deployment
+packets:
+- appName: 1Docker_Tomcat1472571808338_0
+  packet: e27a745366b8683deb66753c1053a7c6
+  specificEntityFile: specificFile.yaml
+  strategy: VMPUPPET

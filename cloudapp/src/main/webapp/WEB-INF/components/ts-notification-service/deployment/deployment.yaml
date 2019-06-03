@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-notification-service
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-notification-service
+        version: v1
+    spec:
+      containers:
+      - name: ts-notification-service
+        image: ts/ts-notification-service
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 17853

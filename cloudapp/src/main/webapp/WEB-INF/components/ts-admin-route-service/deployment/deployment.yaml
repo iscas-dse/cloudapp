@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-admin-route-service
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-admin-route-service
+        version: v1
+    spec:
+      containers:
+      - name: ts-admin-route-service
+        image: ts/ts-admin-route-service
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 16113

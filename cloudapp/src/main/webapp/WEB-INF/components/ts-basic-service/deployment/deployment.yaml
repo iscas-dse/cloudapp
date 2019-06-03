@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-basic-service
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-basic-service
+        version: v1
+    spec:
+      containers:
+      - name: ts-basic-service
+        image: ts/ts-basic-service
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 15680

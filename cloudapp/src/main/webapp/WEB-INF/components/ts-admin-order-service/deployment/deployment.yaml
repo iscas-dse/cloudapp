@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-admin-order-service
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-admin-order-service
+        version: v1
+    spec:
+      containers:
+      - name: ts-admin-order-service
+        image: ts/ts-admin-order-service
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 16112

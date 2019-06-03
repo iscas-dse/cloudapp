@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1 
+kind: Deployment
+metadata:
+  name: com-mysql
+spec:
+  selector:
+    matchLabels:
+      app: com-mysql
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: com-mysql
+    spec:
+      containers:
+      - image: mysql:5.7.14
+        name: com-mysql
+        env:
+          # Use secret in real usage
+        - name: MYSQL_ROOT_PASSWORD
+          value: 123456
+        ports:
+        - containerPort: 3306
+          name: com-mysql

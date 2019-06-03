@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-price-service
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-price-service
+        version: v1
+    spec:
+      containers:
+      - name: ts-price-service
+        image: ts/ts-price-service
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 16579

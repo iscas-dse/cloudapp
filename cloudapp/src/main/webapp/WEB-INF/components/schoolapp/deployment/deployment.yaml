@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1 
+kind: Deployment
+metadata:
+  name: com-schoolapp
+  namespace: thisisatest
+spec:
+  selector:
+    matchLabels:
+      app: com-schoolapp
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: com-schoolapp
+    spec:
+      containers:
+      - image: docker.io/kubeguide/tomcat-app:v1
+        name: com-schoolapp
+        ports:
+        - containerPort: 8080
+          name: com-schoolapp

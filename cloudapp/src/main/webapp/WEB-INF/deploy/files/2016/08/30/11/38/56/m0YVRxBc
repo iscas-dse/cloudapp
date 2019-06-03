@@ -1,0 +1,44 @@
+!!cn.ac.iscas.cloudeploy.v2.model.entity.topology.ServiceTemplate
+name: 1test1
+topologytemplate:
+  nodetemplates:
+  - maxInstance: 1
+    minInstance: 1
+    name: 1Docker_Tomcat1472571525421
+    properties:
+    - defaultValue: '80'
+      name: port
+      required: false
+    - defaultValue: '"iscas/tomcat"'
+      name: image
+      required: false
+    - defaultValue: '"docker.io"'
+      name: registry
+      required: false
+    - defaultValue: '"freecms"'
+      name: server_name
+      required: false
+    - defaultValue: '"freeCMS_Tomcat"'
+      name: instance_name
+      required: false
+    - defaultValue: '"133.133.134.137"'
+      name: apmServer_ip
+      required: false
+    - defaultValue: '""'
+      name: imagetag
+      required: false
+    - defaultValue: '8005'
+      name: shutdownport
+      required: false
+    - defaultValue: '8080'
+      name: http_connector_port
+      required: false
+    - defaultValue: '8443'
+      name: http_redirect_port
+      required: false
+    - defaultValue: '8009'
+      name: ajp_connector_port
+      required: false
+    - defaultValue: '8443'
+      name: ajp_redirect_port
+      required: false

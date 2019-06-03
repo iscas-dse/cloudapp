@@ -1,0 +1,21 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="ehcache.xsd" updateCheck="true"
+	monitoring="autodetect" dynamicConfig="true">
+	<!--缓存到硬盘的路径 -->
+	<diskStore path="/home/lippi/ehcache" />
+	<!-- 内存中的对象是否永远不变 -->
+	<!--空闲了多长时间，超过这个时间清除 -->
+	<!--总共存活时间 -->
+	<!--内存中溢出就放到硬盘上 --> 
+	<defaultCache maxElementsInMemory="200"
+		eternal="false" timeToIdleSeconds="50"
+		timeToLiveSeconds="60"
+		overflowToDisk="true"/>
+
+		<cache name="org.hibernate.cache.spi.UpdateTimestampsCache"
+			maxElementsInMemory="5000" eternal="true" overflowToDisk="true" />
+		<cache name="org.hibernate.cache.internal.StandardQueryCache"
+			maxElementsInMemory="10000" eternal="false" timeToLiveSeconds="120"
+			overflowToDisk="true" />
+		
+</ehcache>

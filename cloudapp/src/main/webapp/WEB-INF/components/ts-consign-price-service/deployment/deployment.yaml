@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-consign-price-service
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-consign-price-service
+        version: v1
+    spec:
+      containers:
+      - name: ts-consign-price-service
+        image: ts/ts-consign-price-service
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 16110

@@ -1,0 +1,1303 @@
+2017-08-24 19:26:48 main INFO  ClassPathXmlApplicationContext:574 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@33e5ccce: startup date [Thu Aug 24 19:26:48 CST 2017]; root of context hierarchy
+2017-08-24 19:26:48 main INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [application_context.xml]
+2017-08-24 19:26:49 main INFO  AutowiredAnnotationBeanPostProcessor:153 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-24 19:26:49 main INFO  PropertiesFactoryBean:172 - Loading properties file from URL [file:F:/Cloudeploy/ConsulAgent/application.properties]
+2017-08-24 19:27:12 main WARN  ClassPathXmlApplicationContext:544 - Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'appCreater': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager cn.ac.iscas.cloudapp.agent.AppCreater.serviceManager; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serviceManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:835)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at cn.ac.iscas.cloudapp.agent.main.AgentMain.main(AgentMain.java:11)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager cn.ac.iscas.cloudapp.agent.AppCreater.serviceManager; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serviceManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:571)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 13 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serviceManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:543)
+	... 15 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:571)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 26 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1123)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1018)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:510)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:543)
+	... 28 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 40 more
+Caused by: com.orbitz.consul.ConsulException: Error connecting to Consul
+	at com.orbitz.consul.AgentClient.ping(AgentClient.java:72)
+	at com.orbitz.consul.Consul.<init>(Consul.java:73)
+	at com.orbitz.consul.Consul.newClient(Consul.java:103)
+	at com.orbitz.consul.Consul.newClient(Consul.java:120)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration.consul(AgentConfiguration.java:17)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration$$EnhancerBySpringCGLIB$$4ea50870.CGLIB$consul$0(<generated>)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration$$EnhancerBySpringCGLIB$$4ea50870$$FastClassBySpringCGLIB$$351075a1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:318)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration$$EnhancerBySpringCGLIB$$4ea50870.consul(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 41 more
+Caused by: javax.ws.rs.ProcessingException: java.net.ConnectException: Connection timed out: connect
+	at org.glassfish.jersey.client.internal.HttpUrlConnector.apply(HttpUrlConnector.java:287)
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:255)
+	at org.glassfish.jersey.client.JerseyInvocation$1.call(JerseyInvocation.java:684)
+	at org.glassfish.jersey.client.JerseyInvocation$1.call(JerseyInvocation.java:681)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:228)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:444)
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:681)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:411)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.get(JerseyInvocation.java:311)
+	at com.orbitz.consul.AgentClient.ping(AgentClient.java:64)
+	... 55 more
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at sun.net.NetworkClient.doConnect(Unknown Source)
+	at sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at sun.net.www.http.HttpClient.<init>(Unknown Source)
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
+	at java.net.HttpURLConnection.getResponseCode(Unknown Source)
+	at org.glassfish.jersey.client.internal.HttpUrlConnector._apply(HttpUrlConnector.java:394)
+	at org.glassfish.jersey.client.internal.HttpUrlConnector.apply(HttpUrlConnector.java:285)
+	... 66 more
+2017-08-25 14:16:43 main INFO  ClassPathXmlApplicationContext:574 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@33e5ccce: startup date [Fri Aug 25 14:16:43 CST 2017]; root of context hierarchy
+2017-08-25 14:16:43 main INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [application_context.xml]
+2017-08-25 14:16:44 main INFO  AutowiredAnnotationBeanPostProcessor:153 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-25 14:16:44 main INFO  PropertiesFactoryBean:172 - Loading properties file from URL [file:F:/Cloudeploy/ConsulAgent/application.properties]
+2017-08-25 14:17:07 main WARN  ClassPathXmlApplicationContext:544 - Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'appCreater': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager cn.ac.iscas.cloudapp.agent.AppCreater.serviceManager; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serviceManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:835)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at cn.ac.iscas.cloudapp.agent.main.AgentMain.main(AgentMain.java:11)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager cn.ac.iscas.cloudapp.agent.AppCreater.serviceManager; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serviceManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:571)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 13 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serviceManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:543)
+	... 15 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:571)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 26 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1123)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1018)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:510)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:543)
+	... 28 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 40 more
+Caused by: com.orbitz.consul.ConsulException: Error connecting to Consul
+	at com.orbitz.consul.AgentClient.ping(AgentClient.java:72)
+	at com.orbitz.consul.Consul.<init>(Consul.java:73)
+	at com.orbitz.consul.Consul.newClient(Consul.java:103)
+	at com.orbitz.consul.Consul.newClient(Consul.java:120)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration.consul(AgentConfiguration.java:17)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration$$EnhancerBySpringCGLIB$$4ea50870.CGLIB$consul$0(<generated>)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration$$EnhancerBySpringCGLIB$$4ea50870$$FastClassBySpringCGLIB$$351075a1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:318)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration$$EnhancerBySpringCGLIB$$4ea50870.consul(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 41 more
+Caused by: javax.ws.rs.ProcessingException: java.net.ConnectException: Connection timed out: connect
+	at org.glassfish.jersey.client.internal.HttpUrlConnector.apply(HttpUrlConnector.java:287)
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:255)
+	at org.glassfish.jersey.client.JerseyInvocation$1.call(JerseyInvocation.java:684)
+	at org.glassfish.jersey.client.JerseyInvocation$1.call(JerseyInvocation.java:681)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:228)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:444)
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:681)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:411)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.get(JerseyInvocation.java:311)
+	at com.orbitz.consul.AgentClient.ping(AgentClient.java:64)
+	... 55 more
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at sun.net.NetworkClient.doConnect(Unknown Source)
+	at sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at sun.net.www.http.HttpClient.<init>(Unknown Source)
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
+	at java.net.HttpURLConnection.getResponseCode(Unknown Source)
+	at org.glassfish.jersey.client.internal.HttpUrlConnector._apply(HttpUrlConnector.java:394)
+	at org.glassfish.jersey.client.internal.HttpUrlConnector.apply(HttpUrlConnector.java:285)
+	... 66 more
+2017-08-28 16:37:40 main INFO  ClassPathXmlApplicationContext:574 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@33e5ccce: startup date [Mon Aug 28 16:37:40 CST 2017]; root of context hierarchy
+2017-08-28 16:37:40 main INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [application_context.xml]
+2017-08-28 16:37:41 main INFO  AutowiredAnnotationBeanPostProcessor:153 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-28 16:37:41 main INFO  PropertiesFactoryBean:172 - Loading properties file from URL [file:F:/Cloudeploy/ConsulAgent/application.properties]
+2017-08-28 16:38:04 main WARN  ClassPathXmlApplicationContext:544 - Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'appCreater': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager cn.ac.iscas.cloudapp.agent.AppCreater.serviceManager; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serviceManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:835)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at cn.ac.iscas.cloudapp.agent.main.AgentMain.main(AgentMain.java:11)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager cn.ac.iscas.cloudapp.agent.AppCreater.serviceManager; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serviceManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:571)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 13 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serviceManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:543)
+	... 15 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:571)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 26 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1123)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1018)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:510)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:543)
+	... 28 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 40 more
+Caused by: com.orbitz.consul.ConsulException: Error connecting to Consul
+	at com.orbitz.consul.AgentClient.ping(AgentClient.java:72)
+	at com.orbitz.consul.Consul.<init>(Consul.java:73)
+	at com.orbitz.consul.Consul.newClient(Consul.java:103)
+	at com.orbitz.consul.Consul.newClient(Consul.java:120)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration.consul(AgentConfiguration.java:17)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration$$EnhancerBySpringCGLIB$$4ea50870.CGLIB$consul$0(<generated>)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration$$EnhancerBySpringCGLIB$$4ea50870$$FastClassBySpringCGLIB$$351075a1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:318)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration$$EnhancerBySpringCGLIB$$4ea50870.consul(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 41 more
+Caused by: javax.ws.rs.ProcessingException: java.net.ConnectException: Connection timed out: connect
+	at org.glassfish.jersey.client.internal.HttpUrlConnector.apply(HttpUrlConnector.java:287)
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:255)
+	at org.glassfish.jersey.client.JerseyInvocation$1.call(JerseyInvocation.java:684)
+	at org.glassfish.jersey.client.JerseyInvocation$1.call(JerseyInvocation.java:681)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:228)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:444)
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:681)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:411)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.get(JerseyInvocation.java:311)
+	at com.orbitz.consul.AgentClient.ping(AgentClient.java:64)
+	... 55 more
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at sun.net.NetworkClient.doConnect(Unknown Source)
+	at sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at sun.net.www.http.HttpClient.<init>(Unknown Source)
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
+	at java.net.HttpURLConnection.getResponseCode(Unknown Source)
+	at org.glassfish.jersey.client.internal.HttpUrlConnector._apply(HttpUrlConnector.java:394)
+	at org.glassfish.jersey.client.internal.HttpUrlConnector.apply(HttpUrlConnector.java:285)
+	... 66 more
+2017-08-28 16:51:05 main INFO  ClassPathXmlApplicationContext:574 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@33e5ccce: startup date [Mon Aug 28 16:51:05 CST 2017]; root of context hierarchy
+2017-08-28 16:51:05 main INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [application_context.xml]
+2017-08-28 16:51:06 main INFO  AutowiredAnnotationBeanPostProcessor:153 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-28 16:51:06 main INFO  PropertiesFactoryBean:172 - Loading properties file from URL [file:F:/Cloudeploy/ConsulAgent/application.properties]
+2017-08-28 16:51:28 main WARN  ClassPathXmlApplicationContext:544 - Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'appCreater': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager cn.ac.iscas.cloudapp.agent.AppCreater.serviceManager; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serviceManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:835)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at cn.ac.iscas.cloudapp.agent.main.AgentMain.main(AgentMain.java:11)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager cn.ac.iscas.cloudapp.agent.AppCreater.serviceManager; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serviceManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:571)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 13 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serviceManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:543)
+	... 15 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:571)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 26 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1123)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1018)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:510)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:543)
+	... 28 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 40 more
+Caused by: com.orbitz.consul.ConsulException: Error connecting to Consul
+	at com.orbitz.consul.AgentClient.ping(AgentClient.java:72)
+	at com.orbitz.consul.Consul.<init>(Consul.java:73)
+	at com.orbitz.consul.Consul.newClient(Consul.java:103)
+	at com.orbitz.consul.Consul.newClient(Consul.java:120)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration.consul(AgentConfiguration.java:17)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration$$EnhancerBySpringCGLIB$$4ea50870.CGLIB$consul$0(<generated>)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration$$EnhancerBySpringCGLIB$$4ea50870$$FastClassBySpringCGLIB$$351075a1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:318)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration$$EnhancerBySpringCGLIB$$4ea50870.consul(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 41 more
+Caused by: javax.ws.rs.ProcessingException: java.net.ConnectException: Connection timed out: connect
+	at org.glassfish.jersey.client.internal.HttpUrlConnector.apply(HttpUrlConnector.java:287)
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:255)
+	at org.glassfish.jersey.client.JerseyInvocation$1.call(JerseyInvocation.java:684)
+	at org.glassfish.jersey.client.JerseyInvocation$1.call(JerseyInvocation.java:681)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:228)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:444)
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:681)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:411)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.get(JerseyInvocation.java:311)
+	at com.orbitz.consul.AgentClient.ping(AgentClient.java:64)
+	... 55 more
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at sun.net.NetworkClient.doConnect(Unknown Source)
+	at sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at sun.net.www.http.HttpClient.<init>(Unknown Source)
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
+	at java.net.HttpURLConnection.getResponseCode(Unknown Source)
+	at org.glassfish.jersey.client.internal.HttpUrlConnector._apply(HttpUrlConnector.java:394)
+	at org.glassfish.jersey.client.internal.HttpUrlConnector.apply(HttpUrlConnector.java:285)
+	... 66 more
+2017-08-28 16:52:01 main INFO  ClassPathXmlApplicationContext:574 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@33e5ccce: startup date [Mon Aug 28 16:52:01 CST 2017]; root of context hierarchy
+2017-08-28 16:52:01 main INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [application_context.xml]
+2017-08-28 16:52:02 main INFO  AutowiredAnnotationBeanPostProcessor:153 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-28 16:52:02 main INFO  PropertiesFactoryBean:172 - Loading properties file from URL [file:F:/Cloudeploy/ConsulAgent/application.properties]
+2017-08-28 16:52:24 main WARN  ClassPathXmlApplicationContext:544 - Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'appCreater': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager cn.ac.iscas.cloudapp.agent.AppCreater.serviceManager; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serviceManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:835)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at cn.ac.iscas.cloudapp.agent.main.AgentMain.main(AgentMain.java:11)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager cn.ac.iscas.cloudapp.agent.AppCreater.serviceManager; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serviceManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:571)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 13 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serviceManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:543)
+	... 15 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:571)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 26 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1123)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1018)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:510)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:543)
+	... 28 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 40 more
+Caused by: com.orbitz.consul.ConsulException: Error connecting to Consul
+	at com.orbitz.consul.AgentClient.ping(AgentClient.java:72)
+	at com.orbitz.consul.Consul.<init>(Consul.java:73)
+	at com.orbitz.consul.Consul.newClient(Consul.java:103)
+	at com.orbitz.consul.Consul.newClient(Consul.java:120)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration.consul(AgentConfiguration.java:17)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration$$EnhancerBySpringCGLIB$$4ea50870.CGLIB$consul$0(<generated>)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration$$EnhancerBySpringCGLIB$$4ea50870$$FastClassBySpringCGLIB$$351075a1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:318)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration$$EnhancerBySpringCGLIB$$4ea50870.consul(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 41 more
+Caused by: javax.ws.rs.ProcessingException: java.net.ConnectException: Connection timed out: connect
+	at org.glassfish.jersey.client.internal.HttpUrlConnector.apply(HttpUrlConnector.java:287)
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:255)
+	at org.glassfish.jersey.client.JerseyInvocation$1.call(JerseyInvocation.java:684)
+	at org.glassfish.jersey.client.JerseyInvocation$1.call(JerseyInvocation.java:681)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:228)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:444)
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:681)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:411)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.get(JerseyInvocation.java:311)
+	at com.orbitz.consul.AgentClient.ping(AgentClient.java:64)
+	... 55 more
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at sun.net.NetworkClient.doConnect(Unknown Source)
+	at sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at sun.net.www.http.HttpClient.<init>(Unknown Source)
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
+	at java.net.HttpURLConnection.getResponseCode(Unknown Source)
+	at org.glassfish.jersey.client.internal.HttpUrlConnector._apply(HttpUrlConnector.java:394)
+	at org.glassfish.jersey.client.internal.HttpUrlConnector.apply(HttpUrlConnector.java:285)
+	... 66 more
+2017-08-28 16:54:13 main INFO  ClassPathXmlApplicationContext:574 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@33e5ccce: startup date [Mon Aug 28 16:54:13 CST 2017]; root of context hierarchy
+2017-08-28 16:54:13 main INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [application_context.xml]
+2017-08-28 16:54:13 main INFO  AutowiredAnnotationBeanPostProcessor:153 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-28 16:54:13 main INFO  PropertiesFactoryBean:172 - Loading properties file from URL [file:F:/Cloudeploy/ConsulAgent/application.properties]
+2017-08-28 16:54:35 main WARN  ClassPathXmlApplicationContext:544 - Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'appCreater': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager cn.ac.iscas.cloudapp.agent.AppCreater.serviceManager; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serviceManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:835)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at cn.ac.iscas.cloudapp.agent.main.AgentMain.main(AgentMain.java:11)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager cn.ac.iscas.cloudapp.agent.AppCreater.serviceManager; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serviceManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:571)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 13 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serviceManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:543)
+	... 15 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:571)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 26 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1123)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1018)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:510)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:543)
+	... 28 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 40 more
+Caused by: com.orbitz.consul.ConsulException: Error connecting to Consul
+	at com.orbitz.consul.AgentClient.ping(AgentClient.java:72)
+	at com.orbitz.consul.Consul.<init>(Consul.java:73)
+	at com.orbitz.consul.Consul.newClient(Consul.java:103)
+	at com.orbitz.consul.Consul.newClient(Consul.java:120)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration.consul(AgentConfiguration.java:17)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration$$EnhancerBySpringCGLIB$$4ea50870.CGLIB$consul$0(<generated>)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration$$EnhancerBySpringCGLIB$$4ea50870$$FastClassBySpringCGLIB$$351075a1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:318)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration$$EnhancerBySpringCGLIB$$4ea50870.consul(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 41 more
+Caused by: javax.ws.rs.ProcessingException: java.net.ConnectException: Connection timed out: connect
+	at org.glassfish.jersey.client.internal.HttpUrlConnector.apply(HttpUrlConnector.java:287)
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:255)
+	at org.glassfish.jersey.client.JerseyInvocation$1.call(JerseyInvocation.java:684)
+	at org.glassfish.jersey.client.JerseyInvocation$1.call(JerseyInvocation.java:681)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:228)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:444)
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:681)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:411)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.get(JerseyInvocation.java:311)
+	at com.orbitz.consul.AgentClient.ping(AgentClient.java:64)
+	... 55 more
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at sun.net.NetworkClient.doConnect(Unknown Source)
+	at sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at sun.net.www.http.HttpClient.<init>(Unknown Source)
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
+	at java.net.HttpURLConnection.getResponseCode(Unknown Source)
+	at org.glassfish.jersey.client.internal.HttpUrlConnector._apply(HttpUrlConnector.java:394)
+	at org.glassfish.jersey.client.internal.HttpUrlConnector.apply(HttpUrlConnector.java:285)
+	... 66 more
+2017-08-29 14:36:27 main INFO  ClassPathXmlApplicationContext:574 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@33e5ccce: startup date [Tue Aug 29 14:36:27 CST 2017]; root of context hierarchy
+2017-08-29 14:36:27 main INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [application_context.xml]
+2017-08-29 14:36:28 main INFO  AutowiredAnnotationBeanPostProcessor:153 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-29 14:36:28 main INFO  PropertiesFactoryBean:172 - Loading properties file from URL [file:F:/Cloudeploy/ConsulAgent/application.properties]
+2017-08-29 14:36:50 main WARN  ClassPathXmlApplicationContext:544 - Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'appCreater': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager cn.ac.iscas.cloudapp.agent.AppCreater.serviceManager; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serviceManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:835)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at cn.ac.iscas.cloudapp.agent.main.AgentMain.main(AgentMain.java:11)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager cn.ac.iscas.cloudapp.agent.AppCreater.serviceManager; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serviceManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:571)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 13 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serviceManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:543)
+	... 15 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:571)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 26 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1123)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1018)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:510)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:543)
+	... 28 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 40 more
+Caused by: com.orbitz.consul.ConsulException: Error connecting to Consul
+	at com.orbitz.consul.AgentClient.ping(AgentClient.java:72)
+	at com.orbitz.consul.Consul.<init>(Consul.java:73)
+	at com.orbitz.consul.Consul.newClient(Consul.java:103)
+	at com.orbitz.consul.Consul.newClient(Consul.java:120)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration.consul(AgentConfiguration.java:17)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration$$EnhancerBySpringCGLIB$$4ea50870.CGLIB$consul$0(<generated>)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration$$EnhancerBySpringCGLIB$$4ea50870$$FastClassBySpringCGLIB$$351075a1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:318)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration$$EnhancerBySpringCGLIB$$4ea50870.consul(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 41 more
+Caused by: javax.ws.rs.ProcessingException: java.net.ConnectException: Connection timed out: connect
+	at org.glassfish.jersey.client.internal.HttpUrlConnector.apply(HttpUrlConnector.java:287)
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:255)
+	at org.glassfish.jersey.client.JerseyInvocation$1.call(JerseyInvocation.java:684)
+	at org.glassfish.jersey.client.JerseyInvocation$1.call(JerseyInvocation.java:681)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:228)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:444)
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:681)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:411)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.get(JerseyInvocation.java:311)
+	at com.orbitz.consul.AgentClient.ping(AgentClient.java:64)
+	... 55 more
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at sun.net.NetworkClient.doConnect(Unknown Source)
+	at sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at sun.net.www.http.HttpClient.<init>(Unknown Source)
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
+	at java.net.HttpURLConnection.getResponseCode(Unknown Source)
+	at org.glassfish.jersey.client.internal.HttpUrlConnector._apply(HttpUrlConnector.java:394)
+	at org.glassfish.jersey.client.internal.HttpUrlConnector.apply(HttpUrlConnector.java:285)
+	... 66 more
+2017-08-30 14:22:01 main INFO  ClassPathXmlApplicationContext:574 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@33e5ccce: startup date [Wed Aug 30 14:22:01 CST 2017]; root of context hierarchy
+2017-08-30 14:22:01 main INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [application_context.xml]
+2017-08-30 14:22:02 main INFO  AutowiredAnnotationBeanPostProcessor:153 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-30 14:22:02 main INFO  PropertiesFactoryBean:172 - Loading properties file from URL [file:F:/Cloudeploy/ConsulAgent/application.properties]
+2017-08-30 14:22:24 main WARN  ClassPathXmlApplicationContext:544 - Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'appCreater': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager cn.ac.iscas.cloudapp.agent.AppCreater.serviceManager; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serviceManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:835)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at cn.ac.iscas.cloudapp.agent.main.AgentMain.main(AgentMain.java:11)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager cn.ac.iscas.cloudapp.agent.AppCreater.serviceManager; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serviceManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:571)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 13 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serviceManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:543)
+	... 15 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:571)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 26 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1123)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1018)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:510)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:543)
+	... 28 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 40 more
+Caused by: com.orbitz.consul.ConsulException: Error connecting to Consul
+	at com.orbitz.consul.AgentClient.ping(AgentClient.java:72)
+	at com.orbitz.consul.Consul.<init>(Consul.java:73)
+	at com.orbitz.consul.Consul.newClient(Consul.java:103)
+	at com.orbitz.consul.Consul.newClient(Consul.java:120)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration.consul(AgentConfiguration.java:17)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration$$EnhancerBySpringCGLIB$$4ea50870.CGLIB$consul$0(<generated>)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration$$EnhancerBySpringCGLIB$$4ea50870$$FastClassBySpringCGLIB$$351075a1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:318)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration$$EnhancerBySpringCGLIB$$4ea50870.consul(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 41 more
+Caused by: javax.ws.rs.ProcessingException: java.net.ConnectException: Connection timed out: connect
+	at org.glassfish.jersey.client.internal.HttpUrlConnector.apply(HttpUrlConnector.java:287)
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:255)
+	at org.glassfish.jersey.client.JerseyInvocation$1.call(JerseyInvocation.java:684)
+	at org.glassfish.jersey.client.JerseyInvocation$1.call(JerseyInvocation.java:681)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:228)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:444)
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:681)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:411)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.get(JerseyInvocation.java:311)
+	at com.orbitz.consul.AgentClient.ping(AgentClient.java:64)
+	... 55 more
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at sun.net.NetworkClient.doConnect(Unknown Source)
+	at sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at sun.net.www.http.HttpClient.<init>(Unknown Source)
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
+	at java.net.HttpURLConnection.getResponseCode(Unknown Source)
+	at org.glassfish.jersey.client.internal.HttpUrlConnector._apply(HttpUrlConnector.java:394)
+	at org.glassfish.jersey.client.internal.HttpUrlConnector.apply(HttpUrlConnector.java:285)
+	... 66 more
+2017-08-30 14:23:30 main INFO  ClassPathXmlApplicationContext:574 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@33e5ccce: startup date [Wed Aug 30 14:23:30 CST 2017]; root of context hierarchy
+2017-08-30 14:23:30 main INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [application_context.xml]
+2017-08-30 14:23:31 main INFO  AutowiredAnnotationBeanPostProcessor:153 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-30 14:23:31 main INFO  PropertiesFactoryBean:172 - Loading properties file from URL [file:F:/Cloudeploy/ConsulAgent/application.properties]
+2017-08-30 14:23:53 main WARN  ClassPathXmlApplicationContext:544 - Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'appCreater': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager cn.ac.iscas.cloudapp.agent.AppCreater.serviceManager; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serviceManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:835)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at cn.ac.iscas.cloudapp.agent.main.AgentMain.main(AgentMain.java:11)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager cn.ac.iscas.cloudapp.agent.AppCreater.serviceManager; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serviceManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:571)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 13 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serviceManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:543)
+	... 15 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.orbitz.consul.Consul cn.ac.iscas.cloudapp.agent.entity.manager.ServiceManager.consul; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:571)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 26 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'consul' defined in cn.ac.iscas.cloudapp.agent.config.AgentConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1123)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1018)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:510)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:543)
+	... 28 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.orbitz.consul.Consul]: Factory method 'consul' threw exception; nested exception is com.orbitz.consul.ConsulException: Error connecting to Consul
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 40 more
+Caused by: com.orbitz.consul.ConsulException: Error connecting to Consul
+	at com.orbitz.consul.AgentClient.ping(AgentClient.java:72)
+	at com.orbitz.consul.Consul.<init>(Consul.java:73)
+	at com.orbitz.consul.Consul.newClient(Consul.java:103)
+	at com.orbitz.consul.Consul.newClient(Consul.java:120)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration.consul(AgentConfiguration.java:17)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration$$EnhancerBySpringCGLIB$$4ea50870.CGLIB$consul$0(<generated>)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration$$EnhancerBySpringCGLIB$$4ea50870$$FastClassBySpringCGLIB$$351075a1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:318)
+	at cn.ac.iscas.cloudapp.agent.config.AgentConfiguration$$EnhancerBySpringCGLIB$$4ea50870.consul(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 41 more
+Caused by: javax.ws.rs.ProcessingException: java.net.ConnectException: Connection timed out: connect
+	at org.glassfish.jersey.client.internal.HttpUrlConnector.apply(HttpUrlConnector.java:287)
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:255)
+	at org.glassfish.jersey.client.JerseyInvocation$1.call(JerseyInvocation.java:684)
+	at org.glassfish.jersey.client.JerseyInvocation$1.call(JerseyInvocation.java:681)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:228)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:444)
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:681)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:411)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.get(JerseyInvocation.java:311)
+	at com.orbitz.consul.AgentClient.ping(AgentClient.java:64)
+	... 55 more
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at sun.net.NetworkClient.doConnect(Unknown Source)
+	at sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at sun.net.www.http.HttpClient.<init>(Unknown Source)
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
+	at java.net.HttpURLConnection.getResponseCode(Unknown Source)
+	at org.glassfish.jersey.client.internal.HttpUrlConnector._apply(HttpUrlConnector.java:394)
+	at org.glassfish.jersey.client.internal.HttpUrlConnector.apply(HttpUrlConnector.java:285)
+	... 66 more
+2017-09-05 11:23:36 main INFO  ClassPathXmlApplicationContext:574 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@33e5ccce: startup date [Tue Sep 05 11:23:36 CST 2017]; root of context hierarchy
+2017-09-05 11:23:36 main INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [application_context.xml]
+2017-09-05 11:23:37 main INFO  AutowiredAnnotationBeanPostProcessor:153 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-09-05 11:23:38 main INFO  PropertiesFactoryBean:172 - Loading properties file from URL [file:F:/Cloudeploy/ConsulAgent/application.properties]
+2017-09-05 11:23:39 main INFO  AppTemplateFileManager:37 - init agent template path:/opt/agent/template
+2017-09-05 11:23:39 main INFO  FileDownloader:25 - init filedownloader with config_path :/opt/agent/configuration
+2017-09-05 11:23:39 main INFO  LoggerFactory:16 - Using Slf4J for logging.
+2017-09-05 11:23:39 main WARN  UserTransactionServiceImp:12 - No properties path set - looking for transactions.properties in classpath...
+2017-09-05 11:23:39 main WARN  UserTransactionServiceImp:12 - transactions.properties not found - looking for jta.properties in classpath...
+2017-09-05 11:23:39 main WARN  UserTransactionServiceImp:12 - Failed to open transactions properties file - using default values
+2017-09-05 11:23:39 main INFO  StateRecoveryManagerImp:16 - com.atomikos.persistence.imp.WriteAheadObjectLog instantiation failed - falling back to default
+2017-09-05 11:23:39 main INFO  AbstractLogStream:16 - Logfile closed: F:\Cloudeploy\ConsulAgent\.\tmlog-1.log
+2017-09-05 11:23:39 main INFO  AbstractUserTransactionService:16 - USING core version: 3.9.3
+2017-09-05 11:23:39 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.automatic_resource_registration = true
+2017-09-05 11:23:39 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.client_demarcation = false
+2017-09-05 11:23:39 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.threaded_2pc = true
+2017-09-05 11:23:39 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.serial_jta_transactions = true
+2017-09-05 11:23:39 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.serializable_logging = true
+2017-09-05 11:23:39 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.log_base_dir = .\
+2017-09-05 11:23:39 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.max_actives = 50
+2017-09-05 11:23:39 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.checkpoint_interval = 500
+2017-09-05 11:23:39 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.enable_logging = true
+2017-09-05 11:23:39 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.output_dir = .\
+2017-09-05 11:23:39 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.log_base_name = tmlog
+2017-09-05 11:23:39 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.max_timeout = 300000
+2017-09-05 11:23:39 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.tm_unique_name = 133.133.133.59.tm
+2017-09-05 11:23:39 main INFO  AbstractUserTransactionService:16 - USING java.naming.factory.initial = com.sun.jndi.rmi.registry.RegistryContextFactory
+2017-09-05 11:23:39 main INFO  AbstractUserTransactionService:16 - USING java.naming.provider.url = rmi://localhost:1099
+2017-09-05 11:23:39 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.service = com.atomikos.icatch.standalone.UserTransactionServiceFactory
+2017-09-05 11:23:39 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.force_shutdown_on_vm_exit = false
+2017-09-05 11:23:39 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.default_jta_timeout = 10000
+2017-09-05 11:23:39 main INFO  AppVolumeManager:33 - init agent volume path :/opt/agent/volume
+2017-09-05 11:23:39 main INFO  EventWorker:50 - init executor's interval: 10
+2017-09-05 11:26:10 main INFO  ClassPathXmlApplicationContext:574 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@33e5ccce: startup date [Tue Sep 05 11:26:10 CST 2017]; root of context hierarchy
+2017-09-05 11:26:10 main INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [application_context.xml]
+2017-09-05 11:26:11 main INFO  AutowiredAnnotationBeanPostProcessor:153 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-09-05 11:26:11 main INFO  PropertiesFactoryBean:172 - Loading properties file from URL [file:F:/Cloudeploy/ConsulAgent/application.properties]
+2017-09-05 11:26:12 main INFO  AppTemplateFileManager:37 - init agent template path:/opt/agent/template
+2017-09-05 11:26:12 main INFO  FileDownloader:25 - init filedownloader with config_path :/opt/agent/configuration
+2017-09-05 11:26:12 main INFO  LoggerFactory:16 - Using Slf4J for logging.
+2017-09-05 11:26:12 main WARN  UserTransactionServiceImp:12 - No properties path set - looking for transactions.properties in classpath...
+2017-09-05 11:26:12 main WARN  UserTransactionServiceImp:12 - transactions.properties not found - looking for jta.properties in classpath...
+2017-09-05 11:26:12 main WARN  UserTransactionServiceImp:12 - Failed to open transactions properties file - using default values
+2017-09-05 11:26:12 main WARN  ClassPathXmlApplicationContext:544 - Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'appCreater': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.entity.manager.AttributeManager cn.ac.iscas.cloudapp.agent.AppCreater.attributeManager; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'attributeManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.entity.manager.ConfigurationManager cn.ac.iscas.cloudapp.agent.entity.manager.AttributeManager.configManager; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configurationManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.transaction.PropagationCoordinator cn.ac.iscas.cloudapp.agent.entity.manager.ConfigurationManager.coordinator; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'propagationCoordinator': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.transaction.PropagationTransactionManager cn.ac.iscas.cloudapp.agent.transaction.PropagationCoordinator.ptm; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'propagationTransactionManager' defined in file [F:\Cloudeploy\ConsulAgent\target\classes\cn\ac\iscas\cloudapp\agent\transaction\PropagationTransactionManager.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [cn.ac.iscas.cloudapp.agent.transaction.PropagationTransactionManager]: Constructor threw exception; nested exception is java.lang.ExceptionInInitializerError
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:835)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at cn.ac.iscas.cloudapp.agent.main.AgentMain.main(AgentMain.java:10)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.entity.manager.AttributeManager cn.ac.iscas.cloudapp.agent.AppCreater.attributeManager; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'attributeManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.entity.manager.ConfigurationManager cn.ac.iscas.cloudapp.agent.entity.manager.AttributeManager.configManager; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configurationManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.transaction.PropagationCoordinator cn.ac.iscas.cloudapp.agent.entity.manager.ConfigurationManager.coordinator; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'propagationCoordinator': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.transaction.PropagationTransactionManager cn.ac.iscas.cloudapp.agent.transaction.PropagationCoordinator.ptm; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'propagationTransactionManager' defined in file [F:\Cloudeploy\ConsulAgent\target\classes\cn\ac\iscas\cloudapp\agent\transaction\PropagationTransactionManager.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [cn.ac.iscas.cloudapp.agent.transaction.PropagationTransactionManager]: Constructor threw exception; nested exception is java.lang.ExceptionInInitializerError
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:571)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 13 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'attributeManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.entity.manager.ConfigurationManager cn.ac.iscas.cloudapp.agent.entity.manager.AttributeManager.configManager; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configurationManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.transaction.PropagationCoordinator cn.ac.iscas.cloudapp.agent.entity.manager.ConfigurationManager.coordinator; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'propagationCoordinator': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.transaction.PropagationTransactionManager cn.ac.iscas.cloudapp.agent.transaction.PropagationCoordinator.ptm; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'propagationTransactionManager' defined in file [F:\Cloudeploy\ConsulAgent\target\classes\cn\ac\iscas\cloudapp\agent\transaction\PropagationTransactionManager.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [cn.ac.iscas.cloudapp.agent.transaction.PropagationTransactionManager]: Constructor threw exception; nested exception is java.lang.ExceptionInInitializerError
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:543)
+	... 15 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.entity.manager.ConfigurationManager cn.ac.iscas.cloudapp.agent.entity.manager.AttributeManager.configManager; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configurationManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.transaction.PropagationCoordinator cn.ac.iscas.cloudapp.agent.entity.manager.ConfigurationManager.coordinator; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'propagationCoordinator': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.transaction.PropagationTransactionManager cn.ac.iscas.cloudapp.agent.transaction.PropagationCoordinator.ptm; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'propagationTransactionManager' defined in file [F:\Cloudeploy\ConsulAgent\target\classes\cn\ac\iscas\cloudapp\agent\transaction\PropagationTransactionManager.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [cn.ac.iscas.cloudapp.agent.transaction.PropagationTransactionManager]: Constructor threw exception; nested exception is java.lang.ExceptionInInitializerError
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:571)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 26 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configurationManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.transaction.PropagationCoordinator cn.ac.iscas.cloudapp.agent.entity.manager.ConfigurationManager.coordinator; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'propagationCoordinator': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.transaction.PropagationTransactionManager cn.ac.iscas.cloudapp.agent.transaction.PropagationCoordinator.ptm; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'propagationTransactionManager' defined in file [F:\Cloudeploy\ConsulAgent\target\classes\cn\ac\iscas\cloudapp\agent\transaction\PropagationTransactionManager.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [cn.ac.iscas.cloudapp.agent.transaction.PropagationTransactionManager]: Constructor threw exception; nested exception is java.lang.ExceptionInInitializerError
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:543)
+	... 28 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.transaction.PropagationCoordinator cn.ac.iscas.cloudapp.agent.entity.manager.ConfigurationManager.coordinator; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'propagationCoordinator': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.transaction.PropagationTransactionManager cn.ac.iscas.cloudapp.agent.transaction.PropagationCoordinator.ptm; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'propagationTransactionManager' defined in file [F:\Cloudeploy\ConsulAgent\target\classes\cn\ac\iscas\cloudapp\agent\transaction\PropagationTransactionManager.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [cn.ac.iscas.cloudapp.agent.transaction.PropagationTransactionManager]: Constructor threw exception; nested exception is java.lang.ExceptionInInitializerError
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:571)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 39 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'propagationCoordinator': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.transaction.PropagationTransactionManager cn.ac.iscas.cloudapp.agent.transaction.PropagationCoordinator.ptm; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'propagationTransactionManager' defined in file [F:\Cloudeploy\ConsulAgent\target\classes\cn\ac\iscas\cloudapp\agent\transaction\PropagationTransactionManager.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [cn.ac.iscas.cloudapp.agent.transaction.PropagationTransactionManager]: Constructor threw exception; nested exception is java.lang.ExceptionInInitializerError
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:543)
+	... 41 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.ac.iscas.cloudapp.agent.transaction.PropagationTransactionManager cn.ac.iscas.cloudapp.agent.transaction.PropagationCoordinator.ptm; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'propagationTransactionManager' defined in file [F:\Cloudeploy\ConsulAgent\target\classes\cn\ac\iscas\cloudapp\agent\transaction\PropagationTransactionManager.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [cn.ac.iscas.cloudapp.agent.transaction.PropagationTransactionManager]: Constructor threw exception; nested exception is java.lang.ExceptionInInitializerError
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:571)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 52 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'propagationTransactionManager' defined in file [F:\Cloudeploy\ConsulAgent\target\classes\cn\ac\iscas\cloudapp\agent\transaction\PropagationTransactionManager.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [cn.ac.iscas.cloudapp.agent.transaction.PropagationTransactionManager]: Constructor threw exception; nested exception is java.lang.ExceptionInInitializerError
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:275)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1143)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1046)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:510)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:543)
+	... 54 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [cn.ac.iscas.cloudapp.agent.transaction.PropagationTransactionManager]: Constructor threw exception; nested exception is java.lang.ExceptionInInitializerError
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:163)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:122)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:267)
+	... 66 more
+Caused by: java.lang.ExceptionInInitializerError
+	at cn.ac.iscas.cloudapp.agent.transaction.PropagationTransactionManager.<init>(PropagationTransactionManager.java:34)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:147)
+	... 68 more
+Caused by: java.lang.IllegalStateException: Can't overwrite cause with java.lang.RuntimeException: Log already in use?
+	at java.lang.Throwable.initCause(Unknown Source)
+	at com.atomikos.icatch.standalone.UserTransactionServiceImp.init(UserTransactionServiceImp.java:326)
+	at com.atomikos.icatch.config.UserTransactionServiceImp.init(UserTransactionServiceImp.java:405)
+	at com.atomikos.icatch.config.UserTransactionServiceImp.init(UserTransactionServiceImp.java:577)
+	at cn.ac.iscas.cloudapp.agent.transaction.PropagationTransactionManager$UserTransactionServiceHolder.<clinit>(PropagationTransactionManager.java:28)
+	... 74 more
+Caused by: com.atomikos.icatch.SysException: Error in init(): Log already in use?
+	... 78 more
+Caused by: java.lang.RuntimeException: Log already in use?
+	at com.atomikos.icatch.standalone.UserTransactionServiceImp.createDefault(UserTransactionServiceImp.java:203)
+	at com.atomikos.icatch.standalone.UserTransactionServiceImp.init(UserTransactionServiceImp.java:258)
+	... 77 more
+2017-09-05 11:26:44 main INFO  ClassPathXmlApplicationContext:574 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@33e5ccce: startup date [Tue Sep 05 11:26:44 CST 2017]; root of context hierarchy
+2017-09-05 11:26:44 main INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [application_context.xml]
+2017-09-05 11:26:45 main INFO  AutowiredAnnotationBeanPostProcessor:153 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-09-05 11:26:45 main INFO  PropertiesFactoryBean:172 - Loading properties file from URL [file:F:/Cloudeploy/ConsulAgent/application.properties]
+2017-09-05 11:26:46 main INFO  AppTemplateFileManager:37 - init agent template path:/opt/agent/template
+2017-09-05 11:26:46 main INFO  FileDownloader:25 - init filedownloader with config_path :/opt/agent/configuration
+2017-09-05 11:26:46 main INFO  LoggerFactory:16 - Using Slf4J for logging.
+2017-09-05 11:26:46 main WARN  UserTransactionServiceImp:12 - No properties path set - looking for transactions.properties in classpath...
+2017-09-05 11:26:46 main WARN  UserTransactionServiceImp:12 - transactions.properties not found - looking for jta.properties in classpath...
+2017-09-05 11:26:46 main WARN  UserTransactionServiceImp:12 - Failed to open transactions properties file - using default values
+2017-09-05 11:26:46 main INFO  StateRecoveryManagerImp:16 - com.atomikos.persistence.imp.WriteAheadObjectLog instantiation failed - falling back to default
+2017-09-05 11:26:46 main INFO  FileLogStream:16 - Starting read of logfile F:\Cloudeploy\ConsulAgent\.\tmlog0.log
+2017-09-05 11:26:46 main INFO  FileLogStream:16 - Done read of logfile
+2017-09-05 11:26:46 main INFO  AbstractLogStream:16 - Logfile closed: F:\Cloudeploy\ConsulAgent\.\tmlog0.log
+2017-09-05 11:26:46 main INFO  AbstractUserTransactionService:16 - USING core version: 3.9.3
+2017-09-05 11:26:46 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.automatic_resource_registration = true
+2017-09-05 11:26:46 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.client_demarcation = false
+2017-09-05 11:26:46 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.threaded_2pc = true
+2017-09-05 11:26:46 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.serial_jta_transactions = true
+2017-09-05 11:26:46 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.serializable_logging = true
+2017-09-05 11:26:46 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.log_base_dir = .\
+2017-09-05 11:26:46 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.max_actives = 50
+2017-09-05 11:26:46 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.checkpoint_interval = 500
+2017-09-05 11:26:46 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.enable_logging = true
+2017-09-05 11:26:46 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.output_dir = .\
+2017-09-05 11:26:46 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.log_base_name = tmlog
+2017-09-05 11:26:46 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.max_timeout = 300000
+2017-09-05 11:26:46 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.tm_unique_name = 133.133.133.59.tm
+2017-09-05 11:26:46 main INFO  AbstractUserTransactionService:16 - USING java.naming.factory.initial = com.sun.jndi.rmi.registry.RegistryContextFactory
+2017-09-05 11:26:46 main INFO  AbstractUserTransactionService:16 - USING java.naming.provider.url = rmi://localhost:1099
+2017-09-05 11:26:46 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.service = com.atomikos.icatch.standalone.UserTransactionServiceFactory
+2017-09-05 11:26:46 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.force_shutdown_on_vm_exit = false
+2017-09-05 11:26:46 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.default_jta_timeout = 10000
+2017-09-05 11:26:46 main INFO  AppVolumeManager:33 - init agent volume path :/opt/agent/volume
+2017-09-05 11:26:46 main INFO  EventWorker:50 - init executor's interval: 10
+2017-09-05 11:27:34 main INFO  ClassPathXmlApplicationContext:574 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@33e5ccce: startup date [Tue Sep 05 11:27:34 CST 2017]; root of context hierarchy
+2017-09-05 11:27:34 main INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [application_context.xml]
+2017-09-05 11:27:34 main INFO  AutowiredAnnotationBeanPostProcessor:153 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-09-05 11:27:35 main INFO  PropertiesFactoryBean:172 - Loading properties file from URL [file:F:/Cloudeploy/ConsulAgent/application.properties]
+2017-09-05 11:27:36 main INFO  AppTemplateFileManager:37 - init agent template path:/opt/agent/template
+2017-09-05 11:27:36 main INFO  FileDownloader:25 - init filedownloader with config_path :/opt/agent/configuration
+2017-09-05 11:27:36 main INFO  LoggerFactory:16 - Using Slf4J for logging.
+2017-09-05 11:27:36 main WARN  UserTransactionServiceImp:12 - No properties path set - looking for transactions.properties in classpath...
+2017-09-05 11:27:36 main WARN  UserTransactionServiceImp:12 - transactions.properties not found - looking for jta.properties in classpath...
+2017-09-05 11:27:36 main WARN  UserTransactionServiceImp:12 - Failed to open transactions properties file - using default values
+2017-09-05 11:27:36 main INFO  StateRecoveryManagerImp:16 - com.atomikos.persistence.imp.WriteAheadObjectLog instantiation failed - falling back to default
+2017-09-05 11:27:36 main INFO  FileLogStream:16 - Starting read of logfile F:\Cloudeploy\ConsulAgent\.\tmlog1.log
+2017-09-05 11:27:36 main INFO  FileLogStream:16 - Done read of logfile
+2017-09-05 11:27:36 main INFO  AbstractLogStream:16 - Logfile closed: F:\Cloudeploy\ConsulAgent\.\tmlog1.log
+2017-09-05 11:27:36 main INFO  AbstractUserTransactionService:16 - USING core version: 3.9.3
+2017-09-05 11:27:36 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.automatic_resource_registration = true
+2017-09-05 11:27:36 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.client_demarcation = false
+2017-09-05 11:27:36 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.threaded_2pc = true
+2017-09-05 11:27:36 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.serial_jta_transactions = true
+2017-09-05 11:27:36 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.serializable_logging = true
+2017-09-05 11:27:36 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.log_base_dir = .\
+2017-09-05 11:27:36 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.max_actives = 50
+2017-09-05 11:27:36 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.checkpoint_interval = 500
+2017-09-05 11:27:36 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.enable_logging = true
+2017-09-05 11:27:36 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.output_dir = .\
+2017-09-05 11:27:36 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.log_base_name = tmlog
+2017-09-05 11:27:36 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.max_timeout = 300000
+2017-09-05 11:27:36 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.tm_unique_name = 133.133.133.59.tm
+2017-09-05 11:27:36 main INFO  AbstractUserTransactionService:16 - USING java.naming.factory.initial = com.sun.jndi.rmi.registry.RegistryContextFactory
+2017-09-05 11:27:36 main INFO  AbstractUserTransactionService:16 - USING java.naming.provider.url = rmi://localhost:1099
+2017-09-05 11:27:36 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.service = com.atomikos.icatch.standalone.UserTransactionServiceFactory
+2017-09-05 11:27:36 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.force_shutdown_on_vm_exit = false
+2017-09-05 11:27:36 main INFO  AbstractUserTransactionService:16 - USING com.atomikos.icatch.default_jta_timeout = 10000
+2017-09-05 11:27:36 main INFO  AppVolumeManager:33 - init agent volume path :/opt/agent/volume
+2017-09-05 11:27:36 main INFO  EventWorker:50 - init executor's interval: 10

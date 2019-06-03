@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-station-service
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-station-service
+        version: v1
+    spec:
+      containers:
+      - name: ts-station-service
+        image: ts/ts-station-service
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 12345

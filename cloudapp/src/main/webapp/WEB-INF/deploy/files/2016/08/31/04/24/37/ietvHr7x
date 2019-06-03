@@ -1,0 +1,210 @@
+!!cn.ac.iscas.cloudeploy.v2.model.entity.topology.ServiceTemplate
+name: 1TPCWBookstore
+nodetypes:
+- capabilities:
+  - name: dbms
+    source: mysql
+  description: mysql type
+  interfaces:
+  - name: install
+  - name: start
+  - name: stop
+  - name: delete
+  name: cloudeploy::docker::component::package::mysql
+  properties:
+  - defaultValue: root
+    name: username
+    required: true
+  - defaultValue: root
+    name: userpasswd
+    required: true
+  requirements:
+  - name: dbms
+    target: mysql
+  services:
+  - name: TPCWMySQL
+    port: '3306'
+- attributes:
+  - name: http_connector_port
+    value: '8080'
+  capabilities:
+  - name: host
+    source: container
+  description: tomcat type
+  interfaces:
+  - name: install
+    params:
+    - name: catalina_base
+      value: /usr/local/tomcat
+  - name: start
+  - name: stop
+  - name: delete
+  name: cloudeploy::docker::component::package::tomcat
+  properties:
+  - defaultValue: /usr/local/tomcat
+    name: catalina_base
+    required: false
+  - defaultValue: '8080'
+    name: http_connector_port
+    required: true
+  - defaultValue: '8005'
+    name: shutdownport
+    required: false
+  - defaultValue: '8443'
+    name: http_redirect_port
+    required: false
+  - defaultValue: '8443'
+    name: ajp_connector_port
+    required: false
+  - defaultValue: '8443'
+    name: ajp_redirect_port
+    required: false
+  requirements:
+  - name: host
+    target: container
+  services:
+  - name: TPCWTomcat
+    port: '8080'
+- description: nginx type
+  interfaces:
+  - name: install
+  - name: start
+  - name: stop
+  - name: delete
+  name: cloudeploy::docker::component::package::nginx
+  requirements:
+  - name: dbms
+    target: tomcat
+  services:
+  - name: TPCWNginx
+    port: '80'
+topologytemplate:
+  nodetemplates:
+  - attributes:
+    - name: passwd
+      value: root
+    - name: user
+      value: root
+    maxInstance: 1
+    minInstance: 1
+    name: 1TPCWMySQL1472631765541
+    properties:
+    - defaultValue: '3306'
+      name: port
+      required: false
+    - defaultValue: '"iscas/mysql"'
+      name: image
+      required: false
+    - defaultValue: '"docker.io"'
+      name: registry
+      required: false
+    - defaultValue: '"freeCMS_MySQL"'
+      name: instance_name
+      required: false
+    - defaultValue: '"3406"'
+      name: port
+      required: false
+    - defaultValue: '"latest"'
+      name: imagetag
+      required: false
+    services:
+    - name: TPCWMySQL
+      port: '3306'
+      serviceId: 1TPCWMySQL1472631765541
+    type: cloudeploy::docker::component::package::mysql
+  - maxInstance: 5
+    minInstance: 1
+    name: 1TPCWTomcat1472631757473
+    properties:
+    - defaultValue: '8380'
+      name: port
+      required: false
+    - defaultValue: '"iscas/tomcat"'
+      name: image
+      required: false
+    - defaultValue: '"docker.io"'
+      name: registry
+      required: false
+    - defaultValue: '"freecms"'
+      name: server_name
+      required: false
+    - defaultValue: '"freeCMS_Tomcat"'
+      name: instance_name
+      required: false
+    - defaultValue: '"133.133.134.137"'
+      name: apmServer_ip
+      required: false
+    - defaultValue: '""'
+      name: imagetag
+      required: false
+    - defaultValue: '8005'
+      name: shutdownport
+      required: false
+    - defaultValue: '8080'
+      name: http_connector_port
+      required: false
+    - defaultValue: '8443'
+      name: http_redirect_port
+      required: false
+    - defaultValue: '8009'
+      name: ajp_connector_port
+      required: false
+    - defaultValue: '8443'
+      name: ajp_redirect_port
+      required: false
+    services:
+    - name: TPCWTomcat
+      port: '8380'
+      serviceId: 1TPCWTomcat1472631757473
+    type: cloudeploy::docker::component::package::tomcat
+  - maxInstance: 1
+    minInstance: 1
+    name: 1TPCWNginx1472631759319
+    properties:
+    - defaultValue: '80'
+      name: port
+      required: false
+    - defaultValue: '"nginx"'
+      name: image
+      required: false
+    - defaultValue: '"docker.io"'
+      name: registry
+      required: false
+    - defaultValue: '"freeCMS_Nginx"'
+      name: instance_name
+      required: false
+    - defaultValue: '"80"'
+      name: port
+      required: false
+    - defaultValue: '"/etc/nginx"'
+      name: mount_file
+      required: false
+    - defaultValue: '["freeCMS_Tomcat:freeCMS_Tomcat",]'
+      name: links
+      required: false
+    - defaultValue: '"latest"'
+      name: imagetag
+      required: false
+    services:
+    - name: TPCWNginx
+      port: '80'
+      serviceId: 1TPCWNginx1472631759319
+    type: cloudeploy::docker::component::package::nginx
+  relationshiptemplates:
+  - name: TPCWNginxToTPCWTomcat
+    source: 1TPCWNginx1472631759319
+    target: 1TPCWTomcat1472631757473
+    templates:
+    - command: ''
+      configurationfile: /etc/nginx/conf.d/bookstore.upstream.conf
+      template: http://133.133.133.59:8080/cloudapp/v2/files/dcc96bb188e0304287d80617d3709012
+    - command: ''
+      configurationfile: /etc/nginx/conf.d/bookstore.conf
+      template: http://133.133.133.59:8080/cloudapp/v2/files/0873f91ab854b5b9e6525580730aba8c
+  - name: TPCWTomcatToTPCWMySQL
+    source: 1TPCWTomcat1472631757473
+    target: 1TPCWMySQL1472631765541
+    templates:
+    - command: ''
+      configurationfile: /usr/local/tomcat/webapps/bookstore-tpcw/META-INF/context.xml
+      template: http://133.133.133.59:8080/cloudapp/v2/files/bc255a2dc4d626b771a9a833b5a44f59

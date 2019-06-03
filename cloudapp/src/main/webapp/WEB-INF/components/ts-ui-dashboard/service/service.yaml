@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ts-ui-dashboard
+  labels:
+    app: ts-ui-dashboard
+spec:
+  type: NodePort
+  ports:
+    - port: 8080
+      nodePort: 30024
+      name: http
+  selector:
+    app: ts-ui-dashboard
+ 

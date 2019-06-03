@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ts-voucher-service
+  labels:
+    app: ts-voucher-service
+spec:
+  ports:
+    - port: 16101
+      name: http
+  selector:
+    app: ts-voucher-service

@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1 
+kind: Deployment
+metadata:
+  name: com-tale
+  namespace: thisisatest
+spec:
+  selector:
+    matchLabels:
+      app: com-tale
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: com-tale
+    spec:
+      containers:
+      - image: tale-images:1.0
+        name: com-tale
+        ports:
+        - containerPort: 9000
+          name: com-tale

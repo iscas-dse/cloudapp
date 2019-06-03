@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ts-login-service
+  labels:
+    app: ts-login-service
+spec:
+  ports:
+    - port: 12342
+      name: http
+  selector:
+    app: ts-login-service

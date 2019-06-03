@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ts-station-service
+  labels:
+    app: ts-station-service
+spec:
+  ports:
+    - port: 12345
+      name: http
+  selector:
+    app: ts-station-service

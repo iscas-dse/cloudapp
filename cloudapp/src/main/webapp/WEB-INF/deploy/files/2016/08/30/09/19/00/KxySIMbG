@@ -1,0 +1,10 @@
+upstream bookstore-tpcw {
+
+  #ip_hash  ;
+
+  keepalive 20;
+  {{range service "TPCWTomcat"}}
+  server {{.Address}}:{{.Port}} max_fails=0 fail_timeout=10s;{{end}}
+
+  #check interval=3000 rise=2 fall=100 timeout=1000 type=http;
+}

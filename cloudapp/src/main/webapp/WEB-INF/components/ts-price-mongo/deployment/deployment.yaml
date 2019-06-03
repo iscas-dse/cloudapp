@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-price-mongo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-price-mongo
+        version: v1
+    spec:
+      containers:
+      - name: ts-price-mongo
+        image: mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 27017
+        
+        

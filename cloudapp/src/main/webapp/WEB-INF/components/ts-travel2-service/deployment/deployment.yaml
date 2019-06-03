@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-travel2-service
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-travel2-service
+        version: v1
+    spec:
+      containers:
+      - name: ts-travel2-service
+        image: ts/ts-travel2-service
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 16346

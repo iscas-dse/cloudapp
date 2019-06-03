@@ -1,0 +1,154 @@
+!!cn.ac.iscas.cloudeploy.v2.model.entity.topology.ServiceTemplate
+name: 1TPCWBookstore
+nodetypes:
+- attributes:
+  - name: http_connector_port
+    value: '8080'
+  capabilities:
+  - name: host
+    source: container
+  description: tomcat type
+  interfaces:
+  - name: install
+    params:
+    - name: catalina_base
+      value: /usr/local/tomcat
+  - name: start
+  - name: stop
+  - name: delete
+  name: cloudeploy::docker::component::package::tomcat
+  properties:
+  - defaultValue: /usr/local/tomcat
+    name: catalina_base
+    required: false
+  - defaultValue: '8080'
+    name: http_connector_port
+    required: true
+  - defaultValue: '8005'
+    name: shutdownport
+    required: false
+  - defaultValue: '8443'
+    name: http_redirect_port
+    required: false
+  - defaultValue: '8443'
+    name: ajp_connector_port
+    required: false
+  - defaultValue: '8443'
+    name: ajp_redirect_port
+    required: false
+  requirements:
+  - name: host
+    target: container
+  services:
+  - name: TPCWTomcat
+    port: '8080'
+- capabilities:
+  - name: dbms
+    source: mysql
+  description: mysql type
+  interfaces:
+  - name: install
+  - name: start
+  - name: stop
+  - name: delete
+  name: cloudeploy::docker::component::package::mysql
+  properties:
+  - defaultValue: root
+    name: username
+    required: true
+  - defaultValue: root
+    name: userpasswd
+    required: true
+  requirements:
+  - name: dbms
+    target: mysql
+  services:
+  - name: TPCWMySQL
+    port: '3306'
+topologytemplate:
+  nodetemplates:
+  - maxInstance: 5
+    minInstance: 1
+    name: 1TPCWTomcat1472614615895
+    properties:
+    - defaultValue: '8380'
+      name: port
+      required: false
+    - defaultValue: '"iscas/tomcat"'
+      name: image
+      required: false
+    - defaultValue: '"docker.io"'
+      name: registry
+      required: false
+    - defaultValue: '"freecms"'
+      name: server_name
+      required: false
+    - defaultValue: '"freeCMS_Tomcat"'
+      name: instance_name
+      required: false
+    - defaultValue: '"133.133.134.137"'
+      name: apmServer_ip
+      required: false
+    - defaultValue: '""'
+      name: imagetag
+      required: false
+    - defaultValue: '8005'
+      name: shutdownport
+      required: false
+    - defaultValue: '8080'
+      name: http_connector_port
+      required: false
+    - defaultValue: '8443'
+      name: http_redirect_port
+      required: false
+    - defaultValue: '8009'
+      name: ajp_connector_port
+      required: false
+    - defaultValue: '8443'
+      name: ajp_redirect_port
+      required: false
+    services:
+    - name: TPCWTomcat
+      port: '8380'
+      serviceId: 1TPCWTomcat1472614615895
+    type: cloudeploy::docker::component::package::tomcat
+  - attributes:
+    - name: TPCWMySQL/passwd
+      value: root
+    - name: TPCWMySQL/user
+      value: root
+    maxInstance: 1
+    minInstance: 1
+    name: 1TPCWMySQL1472614618615
+    properties:
+    - defaultValue: '3306'
+      name: port
+      required: false
+    - defaultValue: '"iscas/mysql"'
+      name: image
+      required: false
+    - defaultValue: '"docker.io"'
+      name: registry
+      required: false
+    - defaultValue: '"freeCMS_MySQL"'
+      name: instance_name
+      required: false
+    - defaultValue: '"3406"'
+      name: port
+      required: false
+    - defaultValue: '"latest"'
+      name: imagetag
+      required: false
+    services:
+    - name: TPCWMySQL
+      port: '3306'
+      serviceId: 1TPCWMySQL1472614618615
+    type: cloudeploy::docker::component::package::mysql
+  relationshiptemplates:
+  - name: TPCWTomcatToTPCWMySQL
+    source: 1TPCWTomcat1472614615895
+    target: 1TPCWMySQL1472614618615
+    templates:
+    - command: ''
+      configurationfile: /usr/local/tomcat/webapps/bookstore-tpcw/META-INF/context.xml
+      template: http://133.133.133.59:8080/cloudapp/v2/files/bc255a2dc4d626b771a9a833b5a44f59

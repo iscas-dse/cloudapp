@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-order-other-service
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-order-other-service
+        version: v1
+    spec:
+      containers:
+      - name: ts-order-other-service
+        image: ts/ts-order-other-service
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 12032

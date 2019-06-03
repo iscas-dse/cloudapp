@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ts-security-service
+  labels:
+    app: ts-security-service
+spec:
+  ports:
+    - port: 11188
+      name: http
+  selector:
+    app: ts-security-service

@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1 # for versions before 1.8.0 use apps/v1beta1
+kind: Deployment
+metadata:
+  name: com-nginx
+  namespace: thisisatest
+spec:
+  selector:
+    matchLabels:
+      app: com-nginx
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: com-nginx
+    spec:
+      containers:
+      - image: nginx:latest
+        name: com-nginx
+        ports:
+        - containerPort: 80
+          name: com-nginx

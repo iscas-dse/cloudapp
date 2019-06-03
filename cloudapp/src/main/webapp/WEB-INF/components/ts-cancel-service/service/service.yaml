@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ts-cancel-service
+  labels:
+    app: ts-cancel-service
+spec:
+  ports:
+    - port: 18885
+      name: http
+  selector:
+    app: ts-cancel-service

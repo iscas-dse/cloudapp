@@ -1,0 +1,14 @@
+!!cn.ac.iscas.cloudeploy.v2.workflowEngine.entity.Deployment
+packets:
+- appName: 1TPCWNginx1472622190725_0
+  packet: 0fdfc11a5089e3cff2bab68a35200935
+  specificEntityFile: specificFile.yaml
+  strategy: VMPUPPET
+- appName: 1TPCWTomcat1472622151362_0
+  packet: 9838c0c2e5d73eb11ff848c8553e9f07
+  specificEntityFile: specificFile.yaml
+  strategy: VMPUPPET
+- appName: 1TPCWMySQL1472622228800_0
+  packet: 8b2f379b503d2b5baa800b2277e06060
+  specificEntityFile: specificFile.yaml
+  strategy: VMPUPPET

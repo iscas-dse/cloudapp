@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-config-service
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-config-service
+        version: v1
+    spec:
+      containers:
+      - name: ts-config-service
+        image: ts/ts-config-service
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 15679

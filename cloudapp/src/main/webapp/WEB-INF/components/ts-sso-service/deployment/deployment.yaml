@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-sso-service
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-sso-service
+        version: v1
+    spec:
+      containers:
+      - name: ts-sso-service
+        image: ts/ts-sso-service
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 12349

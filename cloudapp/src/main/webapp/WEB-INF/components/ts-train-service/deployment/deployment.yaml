@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-train-service
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-train-service
+        version: v1
+    spec:
+      containers:
+      - name: ts-train-service
+        image: ts/ts-train-service
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 14567
