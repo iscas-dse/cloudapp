@@ -9,7 +9,7 @@
 	<properties>
 		<powermock.version>1.6.4</powermock.version>
 		<atomikos-version>3.9.3</atomikos-version>
-		<zip4j.version>1.3.2</zip4j.version>
+		<zip4j.version>2.10.0</zip4j.version>
 	</properties>
 	<dependencies>
 		<dependency>
